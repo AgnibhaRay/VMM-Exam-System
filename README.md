@@ -1,21 +1,42 @@
-# 🎯 VMM Security Guard Test Portal
+# 🎯 Vishal Mega Mart Security Exam System
 
-Welcome to the most awesome security guard examination system! This isn't your average boring test portal - it's a modern, sleek, and secure way to assess security guard candidates. 🚀
+A modern, professional web application built with Next.js for conducting security assessment examinations. This system provides a seamless experience for both administrators and candidates, featuring real-time exam taking, automatic grading, and downloadable certificates.
 
-## ✨ Features That Make Us Special
+## ✨ Key Features
 
-- 🌙 **Dark Mode Support** - Because your eyes deserve some love during those late-night study sessions
-- 🔒 **Tab Switch Detection** - No more sneaky Google searches during exams!
-- 📱 **Fully Responsive** - Works smoothly on everything from your phone to your grandpa's old desktop
-- 🎨 **Modern UI** - Built with TailwindCSS for that extra bit of pizzazz
-- 🔐 **Secure Authentication** - Powered by Firebase for rock-solid security
+### 🔐 Security & Authentication
+- Secure Firebase Authentication
+- Role-based access control (Admin/Candidate)
+- Protected routes and secure session management
+- Tab switch detection for exam integrity
 
-## 🚀 Tech Stack 
+### 👨‍💼 Admin Features
+- Create and manage examinations
+- Set custom exam duration and passing criteria
+- View candidate results and performance analytics
+- Monitor ongoing examinations
 
-- ⚛️ Next.js 14 - The React Framework on steroids
-- 🔥 Firebase - For authentication and data storage
-- 🎨 TailwindCSS - Making things pretty without the headache
-- 📱 Mobile-First Design - Because phones are life
+### 👨‍🎓 Candidate Features
+- User-friendly examination interface
+- Real-time countdown timer
+- Automatic submission on time completion
+- Instant result generation
+- Downloadable PDF certificates for successful completion
+
+### 💻 Technical Features
+- Built with Next.js 14 and TypeScript
+- Real-time updates with Firebase
+- Responsive design with Tailwind CSS
+- Dark mode support
+- Professional PDF certificate generation
+
+## 🛠️ Technology Stack
+
+- **Frontend**: Next.js 14, React, TypeScript
+- **Backend**: Firebase (Authentication, Firestore)
+- **Styling**: Tailwind CSS, Mobile-First Design
+- **PDF Generation**: html2canvas, jsPDF
+- **Development Tools**: ESLint, PostCSS
 
 ## 🎮 Core Features
 
@@ -31,14 +52,14 @@ Welcome to the most awesome security guard examination system! This isn't your a
 - 👥 View candidate results and performance
 - 📈 Track examination statistics
 
-## 🎯 Getting Started
+## 💻 Getting Started
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/vmm-exam-system.git
+git clone https://github.com/AgnibhaRay/VMM-Exam-System.git
 
-# Navigate to the project
-cd vmm-exam-system
+# Navigate to the project directory
+cd VMM-Exam-System
 
 # Install dependencies
 npm install
@@ -66,19 +87,21 @@ NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
 NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
 ```
 
-## 🎨 Color Scheme
+## 🔐 Security Features
 
-We've carefully selected a beautiful color palette that works in both light and dark modes:
-- Primary: Blue (600) to Indigo (600) gradient
-- Background: White/Gray-900
-- Text: Zinc-600/400
-- Accents: Green for success, Red for warnings
+- Secure Firebase Authentication
+- Protected API routes and endpoints
+- Role-based access control
+- Secure session management
+- Anti-cheating measures
+- Real-time monitoring
 
-## 📱 Responsive Breakpoints
+## 📱 Responsive Design
 
-- Mobile: 0-640px
-- Tablet: 641-1024px
-- Desktop: 1025px+
+The application is fully responsive and optimized for:
+- 📱 Mobile devices (< 640px)
+- 💻 Tablets (641px - 1024px)
+- 🖥️ Desktop (> 1024px)
 
 ## 🤝 Contributing
 
@@ -91,11 +114,17 @@ Got ideas to make this even better? We'd love to hear them! Feel free to:
 
 ## 📝 License
 
-This project is licensed under the MIT License - because sharing is caring! 
+This project is licensed under the MIT License.
 
-## 🙏 Credits
+## ⚠️ Disclaimer
 
-Developed with ❤️ by [Agnibha Ray](https://github.com/AgnibhaRay)
+This is an open-source project created for educational and demonstration purposes only. This application is not affiliated with or endorsed by Vishal Mega Mart. No copyright infringement intended.
+
+## 🙏 Acknowledgments
+
+- Built with ❤️ by [Agnibha Ray](https://github.com/AgnibhaRay)
+- Powered by Next.js and Firebase
+- Thanks to the open-source community
 
 ---
 

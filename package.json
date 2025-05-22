@@ -13,6 +13,8 @@
     "@firebase/auth": "^1.10.6",
     "@firebase/firestore": "^4.7.16",
     "firebase": "^11.8.1",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.1",
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

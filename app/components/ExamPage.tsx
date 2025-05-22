@@ -43,6 +43,7 @@ export default function ExamPage({ examId }: { examId: string }) {
       const resultDoc = await addDoc(collection(db, 'results'), {
         examId: exam.id,
         candidateId: user.uid,
+        candidateName: user.name, // Add the candidate's name
         score,
         answers: Object.entries(answers).map(([questionId, selectedOption]) => ({
           questionId,

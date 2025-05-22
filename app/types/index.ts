@@ -25,16 +25,19 @@ export interface Exam {
   questions: Question[];
 }
 
+import { Timestamp } from 'firebase/firestore';
+
 export interface ExamResult {
   id: string;
   examId: string;
   candidateId: string;
+  candidateName: string;
   score: number;
   answers: {
     questionId: string;
     selectedOption: number;
   }[];
-  startTime: Date;
-  endTime: Date;
+  startTime: Timestamp;
+  endTime: Timestamp;
   passed: boolean;
 }

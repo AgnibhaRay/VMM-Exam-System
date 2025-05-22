@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
-import { ExamResult, Exam } from '../types';
+import { ExamResult, Exam, User } from '../types';
+import ExamCertificate from './ExamCertificate';
 
 export default function ResultPage({ resultId }: { resultId: string }) {
   const router = useRouter();
@@ -18,6 +19,14 @@ export default function ResultPage({ resultId }: { resultId: string }) {
         const resultDoc = await getDoc(doc(db, 'results', resultId));
         if (resultDoc.exists()) {
           const resultData = { ...resultDoc.data(), id: resultDoc.id } as ExamResult;
+          
+          // Fetch candidate details
+          const candidateDoc = await getDoc(doc(db, 'users', resultData.candidateId));
+          if (candidateDoc.exists()) {
+            const userData = candidateDoc.data() as User;
+            resultData.candidateName = userData.name;
+          }
+          
           setResult(resultData);
           
           // Fetch exam details
@@ -64,8 +73,8 @@ export default function ResultPage({ resultId }: { resultId: string }) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto p-6">
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-8 shadow-lg">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-8 shadow-lg mb-8">
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text mb-2">
                 Exam Results
@@ -111,15 +120,19 @@ export default function ResultPage({ resultId }: { resultId: string }) {
                   </div>
                 </div>
               </div>
-
-              <div className="text-center mt-8">
-                <button          onClick={() => router.push('/')}
-          className="px-8 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-                >
-                  Back to Dashboard
-                </button>
-              </div>
             </div>
+          </div>
+
+          {/* Certificate Section */}
+          <ExamCertificate result={result} exam={exam} />
+
+          <div className="text-center mt-8">
+            <button
+              onClick={() => router.push('/')}
+              className="px-6 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+            >
+              Back to Dashboard
+            </button>
           </div>
         </div>
       </div>
