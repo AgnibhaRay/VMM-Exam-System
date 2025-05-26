@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "./contexts/AuthContext";
+import { SecurityProvider } from "./contexts/SecurityContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="grammarly-disable-editor" content="true" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen`}
       >
@@ -36,7 +40,9 @@ export default function RootLayout({
           </div>
         </nav> */}
         <main className="min-h-screen pb-32"> {/* Increased padding to prevent footer overlap */}
-          <AuthProvider>{children}</AuthProvider>
+          <AuthProvider>
+            <SecurityProvider>{children}</SecurityProvider>
+          </AuthProvider>
         </main>
         <footer className="absolute bottom-0 w-full border-t border-zinc-200 dark:border-zinc-800 py-4">
           <div className="container mx-auto px-4 flex flex-col items-center justify-center space-y-2">
