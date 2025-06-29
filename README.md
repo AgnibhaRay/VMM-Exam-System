@@ -1,4 +1,4 @@
-# 🎯 Vishal Mega Mart Security Exam System
+# 🎯 VMM Security Exam System
 
 A modern, professional web application built with Next.js for conducting security assessment examinations. This system provides a seamless experience for both administrators and candidates, featuring real-time exam taking, automatic grading, and downloadable certificates.
 
